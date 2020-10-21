@@ -1,12 +1,6 @@
-import numpy as np
-import torch
 import torch.nn as nn
 from models.utils import SamePad2d
-import torch.nn.functional as F
-import torch.optim as optim
-import torch.utils.data
-from torch.autograd import Variable
-import math
+
 
 class ResNet(nn.Module):
 
@@ -40,7 +34,6 @@ class ResNet(nn.Module):
         x = self.C4(x)
         x = self.C5(x)
         return x
-
 
     def stages(self):
         return [self.C1, self.C2, self.C3, self.C4, self.C5]
